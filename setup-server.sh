@@ -22,8 +22,8 @@ read -p "Enter the PHP version you want to install (e.g., 8.2): " php_version
 
 # Validate PHP version input
 if [[ ! "$php_version" =~ ^8\.[0-2]$ ]]; then
-    echo "Invalid PHP version. Please run the script again and enter a valid version."
-    exit 1
+	echo "Invalid PHP version. Please run the script again and enter a valid version."
+	exit 1
 fi
 
 # Install PHP and modules
@@ -36,6 +36,9 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
 
 echo "Installing Node.js 20..."
 sudo apt-get install -y nodejs
+
+# Install Yarn
+sudo npm install -g yarn
 
 # Install Nginx
 echo "Installing Nginx..."
@@ -56,4 +59,3 @@ nginx -v
 
 # Success message
 echo "Setup completed! PHP $php_version, Node.js 20, and Nginx are installed and running."
-
